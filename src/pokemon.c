@@ -47,8 +47,8 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
-#include "constants/weather.h"
 #include "constants/battle_config.h"
+#include "constants/weather.h"
 
 struct SpeciesItem
 {
@@ -1268,6 +1268,8 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
     [SPECIES_RATTATA_ALOLAN - 1] = NATIONAL_DEX_RATTATA,
     [SPECIES_RATICATE_ALOLAN - 1] = NATIONAL_DEX_RATICATE,
     [SPECIES_RAICHU_ALOLAN - 1] = NATIONAL_DEX_RAICHU,
+    [SPECIES_SANDSHREW_ALOLAN - 1] = NATIONAL_DEX_SANDSHREW,
+    [SPECIES_SANDSLASH_ALOLAN - 1] = NATIONAL_DEX_SANDSLASH,
     [SPECIES_VULPIX_ALOLAN - 1] = NATIONAL_DEX_VULPIX,
     [SPECIES_NINETALES_ALOLAN - 1] = NATIONAL_DEX_NINETALES,
     [SPECIES_DIGLETT_ALOLAN - 1] = NATIONAL_DEX_DIGLETT,
@@ -1848,6 +1850,8 @@ const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 #include "data/pokemon/level_up_learnset_pointers.h"
 #include "data/pokemon/form_species_tables.h"
 #include "data/pokemon/form_species_table_pointers.h"
+#include "data/pokemon/form_change_tables.h"
+#include "data/pokemon/form_change_table_pointers.h"
 
 // SPECIES_NONE are ignored in the following two tables, so decrement before accessing these arrays to get the right result
 
@@ -2451,7 +2455,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_MUSHARNA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_PIDOVE - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_TRANQUILL - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_UNFEZANT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_UNFEZANT - 1]      = ANIM_V_STRETCH,
     [SPECIES_BLITZLE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ZEBSTRIKA - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ROGGENROLA - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
@@ -2763,11 +2767,28 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_CALYREX - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
 
     // Forms
-    [SPECIES_ROTOM_HEAT - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ROTOM_FROST - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ROTOM_FAN - 1]     = ANIM_FIGURE_8,
-    [SPECIES_ROTOM_MOW - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ROTOM_WASH - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ROTOM_HEAT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ROTOM_FROST - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ROTOM_FAN - 1]       = ANIM_FIGURE_8,
+    [SPECIES_ROTOM_MOW - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ROTOM_WASH - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ARCEUS_FIGHTING - 1] = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_FLYING - 1]   = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_POISON - 1]   = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_GROUND - 1]   = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_ROCK - 1]     = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_BUG - 1]      = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_GHOST - 1]    = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_STEEL - 1]    = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_FIRE - 1]     = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_WATER - 1]    = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_GRASS - 1]    = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_ELECTRIC - 1] = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_PSYCHIC - 1]  = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_ICE - 1]      = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_DRAGON - 1]   = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_DARK - 1]     = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ARCEUS_FAIRY - 1]    = ANIM_CIRCULAR_VIBRATE,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
@@ -3538,7 +3559,7 @@ void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerP
     dest->species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
 
-    if (heldItem == ITEM_ENIGMA_BERRY)
+    if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
         heldItem = ITEM_NONE;
 
     dest->heldItem = heldItem;
@@ -4077,13 +4098,11 @@ u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality)
 
 u32 GetUnownSpeciesId(u32 personality)
 {
-    return GetUnownLetterByPersonality(personality) + SPECIES_UNOWN_B - 1; //TODO
-    /*
     u16 unownLetter = GetUnownLetterByPersonality(personality);
+
     if (unownLetter == 0)
         return SPECIES_UNOWN;
     return unownLetter + SPECIES_UNOWN_B - 1;
-    */
 }
 
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition)
@@ -5325,7 +5344,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
-    if (heldItem == ITEM_ENIGMA_BERRY)
+    if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
     {
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[gBattlerInMenuId].holdEffect;
@@ -5362,11 +5381,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     // Skip using the item if it won't do anything
     if (!ITEM_HAS_EFFECT(item))
         return TRUE;
-    if (gItemEffectTable[item - ITEM_POTION] == NULL && item != ITEM_ENIGMA_BERRY)
+    if (gItemEffectTable[item - ITEM_POTION] == NULL && item != ITEM_ENIGMA_BERRY_E_READER)
         return TRUE;
 
     // Get item effect
-    if (item == ITEM_ENIGMA_BERRY)
+    if (item == ITEM_ENIGMA_BERRY_E_READER)
     {
         if (gMain.inBattle)
             itemEffect = gEnigmaBerries[gActiveBattler].itemEffect;
@@ -5736,6 +5755,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         case ITEM6_HEAL_HP_LVL_UP:
                             dataUnsigned = gBattleScripting.levelUpHP;
                             break;
+                        case ITEM6_HEAL_HP_QUARTER:
+                            dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) / 4;
+                            if (dataUnsigned == 0)
+                                dataUnsigned = 1;
+                            break;
                         }
 
                         // Only restore HP if not at max health
@@ -6007,10 +6031,10 @@ u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit)
 
     temp = gItemEffectTable[itemId - ITEM_POTION];
 
-    if (!temp && itemId != ITEM_ENIGMA_BERRY)
+    if (!temp && itemId != ITEM_ENIGMA_BERRY_E_READER)
         return 0;
 
-    if (itemId == ITEM_ENIGMA_BERRY)
+    if (itemId == ITEM_ENIGMA_BERRY_E_READER)
     {
         temp = gEnigmaBerries[gActiveBattler].itemEffect;
     }
@@ -6129,7 +6153,7 @@ u8 *UseStatIncreaseItem(u16 itemId)
     int i;
     const u8 *itemEffect;
 
-    if (itemId == ITEM_ENIGMA_BERRY)
+    if (itemId == ITEM_ENIGMA_BERRY_E_READER)
     {
         if (gMain.inBattle)
             itemEffect = gEnigmaBerries[gBattlerInMenuId].itemEffect;
@@ -6231,7 +6255,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, u
     u8 holdEffect;
     u16 currentMap;
 
-    if (heldItem == ITEM_ENIGMA_BERRY)
+    if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
     else
         holdEffect = ItemId_GetHoldEffect(heldItem);
@@ -6690,7 +6714,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
     species = GetMonData(mon, MON_DATA_SPECIES2, 0);
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
 
-    if (heldItem == ITEM_ENIGMA_BERRY)
+    if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
     {
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[0].holdEffect;
@@ -7961,4 +7985,66 @@ u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
         }
     }
     return targetFormId;
+}
+
+// returns SPECIES_NONE if no form change is possible
+u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg) 
+{
+    u32 i;
+    u16 targetSpecies = SPECIES_NONE;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    const struct FormChange *formChanges = gFormChangeTablePointers[species];
+    u16 heldItem;
+    u32 ability;
+
+    if (formChanges != NULL)
+    {
+        heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
+        ability = GetAbilityBySpecies(species, GetMonData(mon, MON_DATA_ABILITY_NUM, NULL));
+
+        for (i = 0; formChanges[i].method != FORM_CHANGE_END; i++)
+        {
+            if (method == formChanges[i].method)
+            {
+                switch (method)
+                {
+                case FORM_ITEM_HOLD:
+                    if (heldItem == formChanges[i].param1)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_ITEM_USE:
+                    if (arg == formChanges[i].param1)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_MOVE:
+                    if (MonKnowsMove(mon, formChanges[i].param1) != formChanges[i].param2)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_ITEM_HOLD_ABILITY:
+                    if (heldItem == formChanges[i].param1 && ability == formChanges[i].param2)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_ITEM_USE_TIME:
+                    RtcCalcLocalTime();
+                    if (arg == formChanges[i].param1)
+                    {
+                        switch (formChanges[i].param2)
+                        {
+                        case DAY:
+                            if (gLocalTime.hours >= 12 && gLocalTime.hours < 24)
+                                targetSpecies = formChanges[i].targetSpecies;
+                            break;
+                        case NIGHT:
+                            if (gLocalTime.hours >= 0 && gLocalTime.hours < 12)
+                                targetSpecies = formChanges[i].targetSpecies;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    return species != targetSpecies ? targetSpecies : SPECIES_NONE;
 }
