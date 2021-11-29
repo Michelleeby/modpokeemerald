@@ -4,7 +4,7 @@ AbandonedShip_HiddenFloorCorridors_MapScripts::
 	.byte 0
 
 AbandonedShip_HiddenFloorCorridors_OnResume:
-	setdivewarp MAP_ABANDONED_SHIP_UNDERWATER1, 255, 5, 4
+	setdivewarp MAP_ABANDONED_SHIP_UNDERWATER1, 5, 4
 	end
 
 AbandonedShip_HiddenFloorCorridors_OnLoad:
@@ -19,35 +19,35 @@ AbandonedShip_HiddenFloorCorridors_OnLoad:
 	end
 
 AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom1::
-	setmetatile 3, 8, METATILE_InsideShip_IntactDoor_Bottom_Unlocked, 1
+	setmetatile 3, 8, METATILE_InsideShip_IntactDoor_Bottom_Unlocked, TRUE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom2::
-	setmetatile 6, 8, METATILE_InsideShip_IntactDoor_Bottom_Unlocked, 1
+	setmetatile 6, 8, METATILE_InsideShip_IntactDoor_Bottom_Unlocked, TRUE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom4::
-	setmetatile 3, 3, METATILE_InsideShip_DoorIndent_Unlocked, 0
+	setmetatile 3, 3, METATILE_InsideShip_DoorIndent_Unlocked, FALSE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom6::
-	setmetatile 9, 3, METATILE_InsideShip_DoorIndent_Unlocked, 0
+	setmetatile 9, 3, METATILE_InsideShip_DoorIndent_Unlocked, FALSE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_LockRoom1::
-	setmetatile 3, 8, METATILE_InsideShip_IntactDoor_Bottom_Locked, 1
+	setmetatile 3, 8, METATILE_InsideShip_IntactDoor_Bottom_Locked, TRUE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_LockRoom2::
-	setmetatile 6, 8, METATILE_InsideShip_IntactDoor_Bottom_Locked, 1
+	setmetatile 6, 8, METATILE_InsideShip_IntactDoor_Bottom_Locked, TRUE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_LockRoom4::
-	setmetatile 3, 3, METATILE_InsideShip_DoorIndent_Locked, 0
+	setmetatile 3, 3, METATILE_InsideShip_DoorIndent_Locked, FALSE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_LockRoom6::
-	setmetatile 9, 3, METATILE_InsideShip_DoorIndent_Locked, 0
+	setmetatile 9, 3, METATILE_InsideShip_DoorIndent_Locked, FALSE
 	return
 
 AbandonedShip_HiddenFloorCorridors_EventScript_Room1Door::

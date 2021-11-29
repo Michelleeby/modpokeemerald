@@ -794,7 +794,7 @@ static void Task_ShowAiPoints(u8 taskId)
                                                  TRUE,
                                                  39, 130, 15, 0xFFFF);
         #else
-        data->aiMonSpriteId = CreateMonPicSprite(gBattleMons[data->aiBattlerId].species,
+        data->aiMonSpriteId = CreateMonPicSprite_HandleDeoxys(gBattleMons[data->aiBattlerId].species,
                                                  gBattleMons[data->aiBattlerId].otId,
                                                  gBattleMons[data->aiBattlerId].personality,
                                                  TRUE,
@@ -917,7 +917,7 @@ static void Task_ShowAiKnowledge(u8 taskId)
                                                  TRUE,
                                                  39, 130, 15, 0xFFFF);
         #else
-        data->aiMonSpriteId = CreateMonPicSprite(gBattleMons[data->aiBattlerId].species,
+        data->aiMonSpriteId = CreateMonPicSprite_HandleDeoxys(gBattleMons[data->aiBattlerId].species,
                                                  gBattleMons[data->aiBattlerId].otId,
                                                  gBattleMons[data->aiBattlerId].personality,
                                                  TRUE,

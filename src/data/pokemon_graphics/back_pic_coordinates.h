@@ -1,8 +1,12 @@
+// All Pokémon pics are 64x64, but this data table defines where in this 64x64 frame
+// the sprite's non-transparent pixels actually are.
+// .size is the dimensions of this drawn pixel area.
+// .y_offset is the number of pixels between the drawn pixel area and the bottom edge.
 const struct MonCoords gMonBackPicCoords[] =
 {
     [SPECIES_NONE] =
     {
-        .size = 0x88,
+        .size = MON_COORDS_SIZE(64, 64),
         .y_offset = 0,
     },
     [SPECIES_BULBASAUR] =
@@ -137,7 +141,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SANDSHREW] =
     {
-        .size = 0x65,
+        .size = MON_COORDS_SIZE(48, 40),
         .y_offset = 13,
     },
     [SPECIES_SANDSLASH] =
@@ -267,7 +271,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_PERSIAN] =
     {
-        .size = 0x87,
+        .size = MON_COORDS_SIZE(64, 56),
         .y_offset = 7,
     },
     [SPECIES_PSYDUCK] =
@@ -357,7 +361,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_VICTREEBEL] =
     {
-        .size = 0x87,
+        .size = MON_COORDS_SIZE(64, 56),
         .y_offset = 6,
     },
     [SPECIES_TENTACOOL] =
@@ -367,7 +371,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_TENTACRUEL] =
     {
-        .size = 0x86,
+        .size = MON_COORDS_SIZE(64, 48),
         .y_offset = 11,
     },
     [SPECIES_GEODUDE] =
@@ -567,7 +571,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CHANSEY] =
     {
-        .size = 0x86,
+        .size = MON_COORDS_SIZE(64, 48),
         .y_offset = 11,
     },
     [SPECIES_TANGELA] =
@@ -702,7 +706,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_KABUTO] =
     {
-        .size = 0x65,
+        .size = MON_COORDS_SIZE(48, 40),
         .y_offset = 13,
     },
     [SPECIES_KABUTOPS] =
@@ -822,7 +826,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_NOCTOWL] =
     {
-        .size = 0x68,
+        .size = MON_COORDS_SIZE(48, 64),
         .y_offset = 3,
     },
     [SPECIES_LEDYBA] =
@@ -912,7 +916,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_BELLOSSOM] =
     {
-        .size = 0x66,
+        .size = MON_COORDS_SIZE(48, 48),
         .y_offset = 11,
     },
     [SPECIES_MARILL] =
@@ -1007,7 +1011,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_UNOWN] =
     {
-        .size = 0x36,
+        .size = MON_COORDS_SIZE(24, 48),
         .y_offset = 8,
     },
     [SPECIES_WOBBUFFET] =
@@ -1027,7 +1031,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_FORRETRESS] =
     {
-        .size = 0x84,
+        .size = MON_COORDS_SIZE(64, 32),
         .y_offset = 16,
     },
     [SPECIES_DUNSPARCE] =
@@ -1192,7 +1196,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SMOOCHUM] =
     {
-        .size = 0x56,
+        .size = MON_COORDS_SIZE(40, 48),
         .y_offset = 9,
     },
     [SPECIES_ELEKID] =
@@ -1227,7 +1231,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SUICUNE] =
     {
-        .size = 0x88,
+        .size = MON_COORDS_SIZE(64, 64),
         .y_offset = 3,
     },
     [SPECIES_LARVITAR] =
@@ -1392,7 +1396,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SHEDINJA] =
     {
-        .size = 0x87,
+        .size = MON_COORDS_SIZE(64, 56),
         .y_offset = 6,
     },
     [SPECIES_TAILLOW] =
@@ -1457,7 +1461,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_DELCATTY] =
     {
-        .size = 0x88,
+        .size = MON_COORDS_SIZE(64, 64),
         .y_offset = 0,
     },
     [SPECIES_KECLEON] =
@@ -1467,12 +1471,12 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_BALTOY] =
     {
-        .size = 0x86,
+        .size = MON_COORDS_SIZE(64, 48),
         .y_offset = 8,
     },
     [SPECIES_CLAYDOL] =
     {
-        .size = 0x87,
+        .size = MON_COORDS_SIZE(64, 56),
         .y_offset = 7,
     },
     [SPECIES_NOSEPASS] =
@@ -1607,7 +1611,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_SNORUNT] =
     {
-        .size = 0x76,
+        .size = MON_COORDS_SIZE(56, 48),
         .y_offset = 10,
     },
     [SPECIES_GLALIE] =
@@ -1837,7 +1841,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_RALTS] =
     {
-        .size = 0x45,
+        .size = MON_COORDS_SIZE(32, 40),
         .y_offset = 13,
     },
     [SPECIES_KIRLIA] =
@@ -2102,7 +2106,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_CHERUBI] =
     {
-        .size = 0x65,
+        .size = MON_COORDS_SIZE(48, 40),
         .y_offset = 13,
     },
     [SPECIES_CHERRIM] =

@@ -49,11 +49,11 @@
 #define BS_EFFECT_BATTLER           2
 #define BS_FAINTED                  3
 #define BS_ATTACKER_WITH_PARTNER    4 // for Cmd_updatestatusicon
-#define BS_UNK_5                    5
-#define BS_UNK_6                    6
+#define BS_FAINTED_LINK_MULTIPLE_1  5
+#define BS_FAINTED_LINK_MULTIPLE_2  6
 #define BS_BATTLER_0                7
 #define BS_ATTACKER_SIDE            8 // for Cmd_jumpifability
-#define BS_TARGET_SIDE              9 // for Cmd_jumpifability
+#define BS_NOT_ATTACKER_SIDE        9 // for Cmd_jumpifability
 #define BS_SCRIPTING                10
 #define BS_PLAYER1                  11
 #define BS_OPPONENT1                12
@@ -81,12 +81,15 @@
 #define VARIOUS_GET_BATTLER_FAINTED             4
 #define VARIOUS_RESET_INTIMIDATE_TRACE_BITS     5
 #define VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP    6
+#define VARIOUS_RESET_PLAYER_FAINTED            7
 #define VARIOUS_PALACE_FLAVOR_TEXT              8
 #define VARIOUS_ARENA_JUDGMENT_WINDOW           9
 #define VARIOUS_ARENA_OPPONENT_MON_LOST         10
 #define VARIOUS_ARENA_PLAYER_MON_LOST           11
 #define VARIOUS_ARENA_BOTH_MONS_LOST            12
 #define VARIOUS_EMIT_YESNOBOX                   13
+#define VARIOUS_DRAW_ARENA_REF_TEXT_BOX         14
+#define VARIOUS_ERASE_ARENA_REF_TEXT_BOX        15
 #define VARIOUS_ARENA_JUDGMENT_STRING           16
 #define VARIOUS_ARENA_WAIT_STRING               17
 #define VARIOUS_WAIT_CRY                        18
@@ -95,6 +98,7 @@
 #define VARIOUS_VOLUME_DOWN                     21
 #define VARIOUS_VOLUME_UP                       22
 #define VARIOUS_SET_ALREADY_STATUS_MOVE_ATTEMPT 23
+#define VARIOUS_PALACE_TRY_ESCAPE_STATUS        24
 #define VARIOUS_SET_TELEPORT_OUTCOME            25
 #define VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC     26
 #define VARIOUS_STAT_TEXT_BUFFER                27

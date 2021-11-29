@@ -86,21 +86,21 @@ static const u16 sVariableDmgMoves[] =
 
 static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
 {
-    [EFFECT_HIT] = 1, 
-    [EFFECT_SLEEP] = 1, 
-    [EFFECT_POISON_HIT] = 1, 
-    [EFFECT_ABSORB] = 4, 
-    [EFFECT_BURN_HIT] = 1, 
-    [EFFECT_FREEZE_HIT] = 1, 
-    [EFFECT_PARALYZE_HIT] = 1, 
-    [EFFECT_EXPLOSION] = 0, 
-    [EFFECT_DREAM_EATER] = 5, 
-    [EFFECT_MIRROR_MOVE] = 1, 
-    [EFFECT_ATTACK_UP] = 1, 
-    [EFFECT_DEFENSE_UP] = 1, 
-    [EFFECT_SPEED_UP] = 1, 
-    [EFFECT_SPECIAL_ATTACK_UP] = 1, 
-    [EFFECT_SPECIAL_DEFENSE_UP] = 1, 
+    [EFFECT_HIT] = 1,
+    [EFFECT_SLEEP] = 1,
+    [EFFECT_POISON_HIT] = 1,
+    [EFFECT_ABSORB] = 4,
+    [EFFECT_BURN_HIT] = 1,
+    [EFFECT_FREEZE_HIT] = 1,
+    [EFFECT_PARALYZE_HIT] = 1,
+    [EFFECT_EXPLOSION] = 0,
+    [EFFECT_DREAM_EATER] = 5,
+    [EFFECT_MIRROR_MOVE] = 1,
+    [EFFECT_ATTACK_UP] = 1,
+    [EFFECT_DEFENSE_UP] = 1,
+    [EFFECT_SPEED_UP] = 1,
+    [EFFECT_SPECIAL_ATTACK_UP] = 1,
+    [EFFECT_SPECIAL_DEFENSE_UP] = 1,
     [EFFECT_ACCURACY_UP] = 1,
     [EFFECT_EVASION_UP] = 1, 
 //    [EFFECT_ALWAYS_HIT] = 2, 
@@ -230,21 +230,21 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
 //    [EFFECT_UNUSED_8D] = 1, 
     [EFFECT_BELLY_DRUM] = 7, 
     [EFFECT_PSYCH_UP] = 7,
-    [EFFECT_MIRROR_COAT] = 6, 
-    [EFFECT_SKULL_BASH] = 3, 
-    [EFFECT_TWISTER] = 1, 
+    [EFFECT_MIRROR_COAT] = 6,
+    [EFFECT_SKULL_BASH] = 3,
+    [EFFECT_TWISTER] = 1,
     [EFFECT_EARTHQUAKE] = 1,
-    [EFFECT_FUTURE_SIGHT] = 1, 
-    [EFFECT_GUST] = 1, 
-    [EFFECT_FLINCH_MINIMIZE_HIT] = 1, 
-    [EFFECT_SOLARBEAM] = 1, 
-    [EFFECT_THUNDER] = 1, 
-    [EFFECT_TELEPORT] = 1, 
-    [EFFECT_BEAT_UP] = 2, 
-    [EFFECT_SEMI_INVULNERABLE] = 3, 
-    [EFFECT_DEFENSE_CURL] = 1, 
-    [EFFECT_SOFTBOILED] = 1, 
-    [EFFECT_FAKE_OUT] = 4, 
+    [EFFECT_FUTURE_SIGHT] = 1,
+    [EFFECT_GUST] = 1,
+    [EFFECT_FLINCH_MINIMIZE_HIT] = 1,
+    [EFFECT_SOLAR_BEAM] = 1,
+    [EFFECT_THUNDER] = 1,
+    [EFFECT_TELEPORT] = 1,
+    [EFFECT_BEAT_UP] = 2,
+    [EFFECT_SEMI_INVULNERABLE] = 3,
+    [EFFECT_DEFENSE_CURL] = 1,
+    [EFFECT_SOFTBOILED] = 1,
+    [EFFECT_FAKE_OUT] = 4,
     [EFFECT_UPROAR] = 4,
     [EFFECT_STOCKPILE] = 3, 
     [EFFECT_SPIT_UP] = 3, 
@@ -262,21 +262,21 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_NATURE_POWER] = 0, 
     [EFFECT_CHARGE] = 4, 
     [EFFECT_TAUNT] = 4,
-    [EFFECT_HELPING_HAND] = 4, 
-    [EFFECT_TRICK] = 4, 
-    [EFFECT_ROLE_PLAY] = 4, 
-    [EFFECT_WISH] = 2, 
-    [EFFECT_ASSIST] = 2, 
-    [EFFECT_INGRAIN] = 6, 
-    [EFFECT_SUPERPOWER] = 3, 
-    [EFFECT_MAGIC_COAT] = 6, 
-    [EFFECT_RECYCLE] = 4, 
-    [EFFECT_REVENGE] = 4, 
-    [EFFECT_BRICK_BREAK] = 2, 
-    [EFFECT_YAWN] = 5, 
-    [EFFECT_KNOCK_OFF] = 2, 
-    [EFFECT_ENDEAVOR] = 1, 
-    [EFFECT_ERUPTION] = 1, 
+    [EFFECT_HELPING_HAND] = 4,
+    [EFFECT_TRICK] = 4,
+    [EFFECT_ROLE_PLAY] = 4,
+    [EFFECT_WISH] = 2,
+    [EFFECT_ASSIST] = 2,
+    [EFFECT_INGRAIN] = 6,
+    [EFFECT_SUPERPOWER] = 3,
+    [EFFECT_MAGIC_COAT] = 6,
+    [EFFECT_RECYCLE] = 4,
+    [EFFECT_REVENGE] = 4,
+    [EFFECT_BRICK_BREAK] = 2,
+    [EFFECT_YAWN] = 5,
+    [EFFECT_KNOCK_OFF] = 2,
+    [EFFECT_ENDEAVOR] = 1,
+    [EFFECT_ERUPTION] = 1,
     [EFFECT_SKILL_SWAP] = 6,
     [EFFECT_IMPRISON] = 6, 
     [EFFECT_REFRESH] = 6, 
@@ -312,93 +312,93 @@ static const u16 sPoints_SetUp[] =
 {
     4, // Future Sight
     4, // Doom Desire
-    6, 
+    6,
     6, // Wish
     7, // Grudge
-    6, 
+    6,
     2  // Ingrain
 };
 static const u16 sPoints_RainMoves[] =
 {
-    MOVE_BUBBLE, 3, 
-    MOVE_WHIRLPOOL, 3, 
-    MOVE_OCTAZOOKA, 3, 
-    MOVE_CLAMP, 3, 
-    MOVE_WITHDRAW, 3, 
-    MOVE_CRABHAMMER, 3, 
-    MOVE_WATER_SPOUT, 3, 
+    MOVE_BUBBLE, 3,
+    MOVE_WHIRLPOOL, 3,
+    MOVE_OCTAZOOKA, 3,
+    MOVE_CLAMP, 3,
+    MOVE_WITHDRAW, 3,
+    MOVE_CRABHAMMER, 3,
+    MOVE_WATER_SPOUT, 3,
     MOVE_DIVE, 3,
-    MOVE_WATERFALL, 3, 
-    MOVE_MUDDY_WATER, 3, 
-    MOVE_SURF, 3, 
-    MOVE_HYDRO_CANNON, 3, 
-    MOVE_HYDRO_PUMP, 3, 
-    MOVE_BUBBLE_BEAM, 3, 
+    MOVE_WATERFALL, 3,
+    MOVE_MUDDY_WATER, 3,
+    MOVE_SURF, 3,
+    MOVE_HYDRO_CANNON, 3,
+    MOVE_HYDRO_PUMP, 3,
+    MOVE_BUBBLE_BEAM, 3,
     MOVE_WATER_SPORT, 0, // Unnecessary, unlisted moves are already given 0 points
     MOVE_WATER_GUN, 3,
-    MOVE_WATER_PULSE, 3, 
-    MOVE_WEATHER_BALL, 3, 
-    MOVE_THUNDER, 3, 
-    MOVE_SOLAR_BEAM, -4, 
-    MOVE_OVERHEAT, -4, 
-    MOVE_FLAME_WHEEL, -4, 
-    MOVE_FLAMETHROWER, -4, 
+    MOVE_WATER_PULSE, 3,
+    MOVE_WEATHER_BALL, 3,
+    MOVE_THUNDER, 3,
+    MOVE_SOLAR_BEAM, -4,
+    MOVE_OVERHEAT, -4,
+    MOVE_FLAME_WHEEL, -4,
+    MOVE_FLAMETHROWER, -4,
     MOVE_SACRED_FIRE, -4,
-    MOVE_FIRE_BLAST, -4, 
-    MOVE_HEAT_WAVE, -4, 
-    MOVE_EMBER, -4, 
-    MOVE_BLAST_BURN, -4, 
-    MOVE_BLAZE_KICK, -4, 
-    MOVE_ERUPTION, -4, 
-    MOVE_FIRE_SPIN, -4, 
+    MOVE_FIRE_BLAST, -4,
+    MOVE_HEAT_WAVE, -4,
+    MOVE_EMBER, -4,
+    MOVE_BLAST_BURN, -4,
+    MOVE_BLAZE_KICK, -4,
+    MOVE_ERUPTION, -4,
+    MOVE_FIRE_SPIN, -4,
     MOVE_FIRE_PUNCH, -4,
     MOVE_SOLAR_BEAM, -4, // Repeated
     TABLE_END, 0
 };
 static const u16 sPoints_SunMoves[] =
 {
-    MOVE_OVERHEAT, 3, 
-    MOVE_FLAME_WHEEL, 3, 
-    MOVE_FLAMETHROWER, 3, 
-    MOVE_SACRED_FIRE, 3, 
-    MOVE_FIRE_BLAST, 3, 
-    MOVE_HEAT_WAVE, 3, 
-    MOVE_EMBER, 3, 
+    MOVE_OVERHEAT, 3,
+    MOVE_FLAME_WHEEL, 3,
+    MOVE_FLAMETHROWER, 3,
+    MOVE_SACRED_FIRE, 3,
+    MOVE_FIRE_BLAST, 3,
+    MOVE_HEAT_WAVE, 3,
+    MOVE_EMBER, 3,
     MOVE_BLAST_BURN, 3,
-    MOVE_BLAZE_KICK, 3, 
-    MOVE_ERUPTION, 3, 
-    MOVE_FIRE_SPIN, 3, 
-    MOVE_FIRE_PUNCH, 3, 
-    MOVE_SOLAR_BEAM, 5, 
-    MOVE_SYNTHESIS, 3, 
-    MOVE_MORNING_SUN, 3, 
+    MOVE_BLAZE_KICK, 3,
+    MOVE_ERUPTION, 3,
+    MOVE_FIRE_SPIN, 3,
+    MOVE_FIRE_PUNCH, 3,
+    MOVE_SOLAR_BEAM, 5,
+    MOVE_SYNTHESIS, 3,
+    MOVE_MORNING_SUN, 3,
     MOVE_MOONLIGHT, 3,
-    MOVE_WEATHER_BALL, 3, 
+    MOVE_WEATHER_BALL, 3,
     TABLE_END, 0
 };
 static const u16 sPoints_SandstormMoves[] =
 {
-    MOVE_WEATHER_BALL, 3, 
-    MOVE_SOLAR_BEAM, -3, 
+    MOVE_WEATHER_BALL, 3,
+    MOVE_SOLAR_BEAM, -3,
     TABLE_END, 0
 };
 static const u16 sPoints_HailMoves[] =
 {
-    MOVE_WEATHER_BALL, 3, 
-    MOVE_SOLAR_BEAM, -3, 
+    MOVE_WEATHER_BALL, 3,
+    MOVE_SOLAR_BEAM, -3,
     TABLE_END, 0
 };
 static const u16 sPoints_ElectricMoves[] =
 {
-    MOVE_THUNDERBOLT, 3, 
-    MOVE_THUNDER_PUNCH, 3, 
-    MOVE_SPARK, 3, 
-    MOVE_THUNDER_SHOCK, 3, 
-    MOVE_ZAP_CANNON, 3, 
-    MOVE_SHOCK_WAVE, 3, 
+    MOVE_THUNDERBOLT, 3,
+    MOVE_THUNDER_PUNCH, 3,
+    MOVE_SPARK, 3,
+    MOVE_THUNDER_SHOCK, 3,
+    MOVE_ZAP_CANNON, 3,
+    MOVE_SHOCK_WAVE, 3,
     MOVE_THUNDER_WAVE, 0, // Unnecessary, unlisted moves are already given 0 points
     MOVE_THUNDER, 3,
-    MOVE_VOLT_TACKLE, 3, 
+    MOVE_VOLT_TACKLE, 3,
     TABLE_END, 0
 };
 static const u16 sPoints_StatusDmg[] =
@@ -407,7 +407,7 @@ static const u16 sPoints_StatusDmg[] =
     3, // Leech Seed
     3, // Poison
     3, // Toxic
-    3, // Burn 
+    3, // Burn
     3, // Nightmare
     3  // Wrap (Trapping move)
 };
@@ -434,62 +434,62 @@ static const u16 sPoints_Flinched[] = { 4 };
 
 static const u16 sPoints_StatIncrease1[NUM_BATTLE_STATS - 1] =
 {
-    [STAT_ATK - 1]     = 2, 
-    [STAT_DEF - 1]     = 2, 
-    [STAT_SPEED - 1]   = 2, 
-    [STAT_SPATK - 1]   = 2, 
-    [STAT_SPDEF - 1]   = 2, 
-    [STAT_ACC - 1]     = 2, 
+    [STAT_ATK - 1]     = 2,
+    [STAT_DEF - 1]     = 2,
+    [STAT_SPEED - 1]   = 2,
+    [STAT_SPATK - 1]   = 2,
+    [STAT_SPDEF - 1]   = 2,
+    [STAT_ACC - 1]     = 2,
     [STAT_EVASION - 1] = 2
 };
 static const u16 sPoints_StatIncrease2[NUM_BATTLE_STATS - 1] =
 {
-    [STAT_ATK - 1]     = 4, 
-    [STAT_DEF - 1]     = 4, 
-    [STAT_SPEED - 1]   = 4, 
-    [STAT_SPATK - 1]   = 4, 
-    [STAT_SPDEF - 1]   = 4, 
-    [STAT_ACC - 1]     = 4, 
+    [STAT_ATK - 1]     = 4,
+    [STAT_DEF - 1]     = 4,
+    [STAT_SPEED - 1]   = 4,
+    [STAT_SPATK - 1]   = 4,
+    [STAT_SPDEF - 1]   = 4,
+    [STAT_ACC - 1]     = 4,
     [STAT_EVASION - 1] = 4
 };
 static const u16 sPoints_StatDecreaseSelf[NUM_BATTLE_STATS - 1] =
 {
-    [STAT_ATK - 1]     = -1, 
-    [STAT_DEF - 1]     = -1, 
-    [STAT_SPEED - 1]   = -1, 
-    [STAT_SPATK - 1]   = -1, 
-    [STAT_SPDEF - 1]   = -1, 
-    [STAT_ACC - 1]     = -1, 
+    [STAT_ATK - 1]     = -1,
+    [STAT_DEF - 1]     = -1,
+    [STAT_SPEED - 1]   = -1,
+    [STAT_SPATK - 1]   = -1,
+    [STAT_SPDEF - 1]   = -1,
+    [STAT_ACC - 1]     = -1,
     [STAT_EVASION - 1] = -1
 };
 static const u16 sPoints_StatDecrease1[NUM_BATTLE_STATS - 1] =
 {
-    [STAT_ATK - 1]     = 2, 
-    [STAT_DEF - 1]     = 2, 
-    [STAT_SPEED - 1]   = 2, 
-    [STAT_SPATK - 1]   = 2, 
-    [STAT_SPDEF - 1]   = 2, 
-    [STAT_ACC - 1]     = 2, 
+    [STAT_ATK - 1]     = 2,
+    [STAT_DEF - 1]     = 2,
+    [STAT_SPEED - 1]   = 2,
+    [STAT_SPATK - 1]   = 2,
+    [STAT_SPDEF - 1]   = 2,
+    [STAT_ACC - 1]     = 2,
     [STAT_EVASION - 1] = 2
 };
 static const u16 sPoints_StatDecrease2[NUM_BATTLE_STATS - 1] =
 {
-    [STAT_ATK - 1]     = 4, 
-    [STAT_DEF - 1]     = 4, 
-    [STAT_SPEED - 1]   = 4, 
-    [STAT_SPATK - 1]   = 4, 
-    [STAT_SPDEF - 1]   = 4, 
-    [STAT_ACC - 1]     = 4, 
+    [STAT_ATK - 1]     = 4,
+    [STAT_DEF - 1]     = 4,
+    [STAT_SPEED - 1]   = 4,
+    [STAT_SPATK - 1]   = 4,
+    [STAT_SPDEF - 1]   = 4,
+    [STAT_ACC - 1]     = 4,
     [STAT_EVASION - 1] = 4
 };
 static const u16 sPoints_StatIncreaseNotSelf[NUM_BATTLE_STATS - 1] =
 {
-    [STAT_ATK - 1]     = -2, 
-    [STAT_DEF - 1]     = -2, 
-    [STAT_SPEED - 1]   = -2, 
+    [STAT_ATK - 1]     = -2,
+    [STAT_DEF - 1]     = -2,
+    [STAT_SPEED - 1]   = -2,
     [STAT_SPATK - 1]   = -2,
-    [STAT_SPDEF - 1]   = -2, 
-    [STAT_ACC - 1]     = -2, 
+    [STAT_SPDEF - 1]   = -2,
+    [STAT_ACC - 1]     = -2,
     [STAT_EVASION - 1] = -2
 };
 
@@ -1130,11 +1130,11 @@ void TryPutLinkBattleTvShowOnAir(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
     {
-        if ((playerBestMonId < 3 && !GetLinkTrainerFlankId(gBattleScripting.multiplayerId))
-            || (playerBestMonId >= 3 && GetLinkTrainerFlankId(gBattleScripting.multiplayerId)))
+        if ((playerBestMonId < MULTI_PARTY_SIZE && !GetLinkTrainerFlankId(gBattleScripting.multiplayerId))
+         || (playerBestMonId >= MULTI_PARTY_SIZE && GetLinkTrainerFlankId(gBattleScripting.multiplayerId)))
         {
-            j = (opponentBestMonId < 3) ? 0 : 1;
-            PutBattleUpdateOnTheAir(sub_806EF84(j, gBattleScripting.multiplayerId), moveId, playerBestSpecies, opponentBestSpecies);
+            j = (opponentBestMonId < MULTI_PARTY_SIZE) ? FALSE : TRUE;
+            PutBattleUpdateOnTheAir(GetOpposingLinkMultiBattlerId(j, gBattleScripting.multiplayerId), moveId, playerBestSpecies, opponentBestSpecies);
         }
     }
     else
@@ -1582,12 +1582,12 @@ u8 GetBattlerMoveSlotId(u8 battlerId, u16 moveId)
 
 static void AddPointsBasedOnWeather(u16 weatherFlags, u16 moveId, u8 moveSlot)
 {
-    if (weatherFlags & WEATHER_RAIN_ANY)
+    if (weatherFlags & B_WEATHER_RAIN)
         AddMovePoints(PTS_RAIN, moveId, moveSlot, 0);
-    else if (weatherFlags & WEATHER_SUN_ANY)
+    else if (weatherFlags & B_WEATHER_SUN)
         AddMovePoints(PTS_SUN, moveId, moveSlot, 0);
-    else if (weatherFlags & WEATHER_SANDSTORM_ANY)
+    else if (weatherFlags & B_WEATHER_SANDSTORM)
         AddMovePoints(PTS_SANDSTORM, moveId, moveSlot, 0);
-    else if (weatherFlags & WEATHER_HAIL_ANY)
+    else if (weatherFlags & B_WEATHER_HAIL)
         AddMovePoints(PTS_HAIL, moveId, moveSlot, 0);
 }
